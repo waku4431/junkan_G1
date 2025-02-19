@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循環G1サイト</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #ddd;
+            border: 1px solid #ccc;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+        .tab.active {
+            background: #333;
+            color: white;
+        }
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        .graph-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .graph, .sheet {
+            border: 2px solid #333;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            overflow: hidden;
+            position: relative;
+        }
+        .graph {
+            height: 400px;
+        }
+        .sheet {
+            height: 650px;
+        }
+        iframe {
+            width: 120%;
+            height: 120%;
+            transform: scale(0.85);
+            transform-origin: top left;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h3>わくわくG1サイト</h3>
+
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('graphs')">グラフ</div>
+        <div class="tab" onclick="showTab('sheet1')">回収額&回収率</div>
+        <div class="tab" onclick="showTab('sheet2')">掛け金</div>
+        <div class="tab" onclick="showTab('sheet3')">収支</div>
+    </div>
+
+    <div id="graphs" class="content active">
+        <div class="graph-container">
+            <div class="graph">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYsWIxDwn53ibfHD-Xtg5ieLFmcUkSrWt9ZJyA2BHjZKWRcc0VvFAzBc70v2f1eVviDSr-a240BjbX/pubchart?oid=609050928&format=interactive"></iframe>
+            </div>
+
+            <div class="graph">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYsWIxDwn53ibfHD-Xtg5ieLFmcUkSrWt9ZJyA2BHjZKWRcc0VvFAzBc70v2f1eVviDSr-a240BjbX/pubchart?oid=2101871869&format=interactive"></iframe>
+            </div>
+            <div class="graph">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYsWIxDwn53ibfHD-Xtg5ieLFmcUkSrWt9ZJyA2BHjZKWRcc0VvFAzBc70v2f1eVviDSr-a240BjbX/pubchart?oid=1171319703&format=interactive"></iframe>
+            </div>
+
+            <div class="graph">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYsWIxDwn53ibfHD-Xtg5ieLFmcUkSrWt9ZJyA2BHjZKWRcc0VvFAzBc70v2f1eVviDSr-a240BjbX/pubchart?oid=1286402321&format=interactive"></iframe>
+            </div>
+            <div class="graph">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYsWIxDwn53ibfHD-Xtg5ieLFmcUkSrWt9ZJyA2BHjZKWRcc0VvFAzBc70v2f1eVviDSr-a240BjbX/pubchart?oid=1425808667&format=interactive"></iframe>
+            </div>
+            <div class="graph">
+                <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYsWIxDwn53ibfHD-Xtg5ieLFmcUkSrWt9ZJyA2BHjZKWRcc0VvFAzBc70v2f1eVviDSr-a240BjbX/pubchart?oid=1250670515&format=interactive"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="sheet1" class="content">
+        <div class="sheet">
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYsWIxDwn53ibfHD-Xtg5ieLFmcUkSrWt9ZJyA2BHjZKWRcc0VvFAzBc70v2f1eVviDSr-a240BjbX/pubhtml?gid=969131636&single=true"></iframe>
+        </div>
+    </div>
+
+    <div id="sheet2" class="content">
+        <div class="sheet">
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYsWIxDwn53ibfHD-Xtg5ieLFmcUkSrWt9ZJyA2BHjZKWRcc0VvFAzBc70v2f1eVviDSr-a240BjbX/pubhtml?gid=1816237751&single=true"></iframe>
+        </div>
+    </div>
+
+    <div id="sheet3" class="content">
+        <div class="sheet">
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTYsWIxDwn53ibfHD-Xtg5ieLFmcUkSrWt9ZJyA2BHjZKWRcc0VvFAzBc70v2f1eVviDSr-a240BjbX/pubhtml?gid=1684319234&single=true"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.content').forEach(content => {
+                content.classList.remove('active');
+                content.style.display = "none";
+            });
+            document.getElementById(tabId).classList.add('active');
+            document.getElementById(tabId).style.display = "block";
+
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelector(`.tab[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
